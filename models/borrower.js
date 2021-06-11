@@ -41,9 +41,6 @@ borrowerSchema.pre('save', async function(next) {
     if (borrower.isModified('client_number')) {
         borrower.client_number = borrower.client_name.toUpperCase()
     }
-    if (borrower.isModified('short_name')) {
-        borrower.short_name = borrower.short_name.toLowerCase()
-    }
     next()
 })
 

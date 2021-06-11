@@ -1,13 +1,13 @@
 const { mongoose, validator } = require('./mongoose')
 
 const collateralAdvanceRateSchema = {
-    source: {
+    collateral_type: {
         type: String,
         required: true,
         trim: true,
         maxLength: 10
     },
-    name: {
+    collateral_name: {
         type: String,
         required: true,
         trim: true,
