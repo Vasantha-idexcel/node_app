@@ -1,7 +1,7 @@
 const { mongoose, validator } = require('./mongoose')
 
 const collateralAdvanceRateSchema = {
-    collateral_type: {
+    collateral_name: {
         type: String,
         required: true,
         trim: true,
@@ -23,5 +23,4 @@ const collateralAdvanceRateSchema = {
     }
 }
 
-const CollateralAdvanceRate = mongoose.model('CollateralAdvanceRate', collateralAdvanceRateSchema)
-module.exports = CollateralAdvanceRate
+module.exports = collateralAdvanceRateSchema

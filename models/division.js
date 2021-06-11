@@ -13,10 +13,9 @@ const divisionSchema = mongoose.Schema({
         trim: true,
         minLength: 7,
     },
-    collateral_advance_rates: [{
+    collaterals: [{
         collateralAdvanceRateSchema
     }]
 })
 
-const Division = mongoose.model('Division', divisionSchema)
-module.exports = Division
+module.exports = divisionSchema
