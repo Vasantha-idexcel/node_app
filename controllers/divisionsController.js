@@ -1,6 +1,5 @@
-const borrowerSubController = require('./borrowerSubController')
-const Borrower = require('../models/borrower')
+const subDocumentController = require('./subDocumentController')
 
-const divisionController = new borrowerSubController()
+const divisionController = new subDocumentController()
 
 module.exports = divisionController

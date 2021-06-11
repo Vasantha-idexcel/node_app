@@ -1,6 +1,7 @@
 const params = require('params');
+const Borrower = require('../models/borrower')
 
-function borrowerSubController() {
+function subDocumentController() {
     this.json_error = (title, message) => {
         return {
             code: title,
@@ -36,12 +37,23 @@ function borrowerSubController() {
     }
     this.index = async(req, res) => {
         try {
-            query = (req.query === {}) ? {} : req.query;
             res.json(borrower.divisions)
         } catch (error) {
             res.status(400).json(this.json_error('Bad Request', error));
         }
     }
+    this.create = async(req, res) => {
+        try {
+            borrower.divisions.push({
+                division_name: 'Div1',
+                description: 'Division 1'
+            })
+            borrower.save()
+            res.status(201).json('Division successfully created')
+        } catch (error) {
+            res.status(400).json(this.json_error('Bad Request', error))
+        }
+    }
 }
 
-module.exports = borrowerSubController
+module.exports = subDocumentController
