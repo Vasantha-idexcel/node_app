@@ -30,7 +30,7 @@ function resourceController(Resource, resourceName, paramsName, paramsArray) {
             }
             record = await this.Resource.findById(req.params.id)
             if (!record) {
-                throw 'Unable to fetch ${this.paramsName} with given id!'
+                throw 'Unable to fetch ' + this.paramsName + ' with given id!'
             }
             req.resourceContent = record
             next()
