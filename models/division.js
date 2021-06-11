@@ -2,7 +2,7 @@ const { mongoose, validator } = require('./mongoose')
 const collateralAdvanceRateSchema = require('./collateral_advance_rate')
 
 const divisionSchema = mongoose.Schema({
-    name: {
+    division_name: {
         type: String,
         required: true,
         trim: true,
