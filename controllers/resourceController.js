@@ -17,9 +17,10 @@ function resourceController(Resource, resourceName, paramsName, paramsArray) {
         try {
             data = params(req.body).require(this.paramsName)
             data = params(data[this.paramsName]).only(this.paramsArray)
+            req.bodyContent = data
             next()
         } catch (error) {
-            res.status(400).json(this.json_error('Bad Request', 'Missing params - ${this.paramsName}'))
+            res.status(400).json(this.json_error('Bad Request', "Missing params - " + this.paramsName))
         }
     }
     this.getRecord = async(req, res, next) => {
@@ -56,7 +57,7 @@ function resourceController(Resource, resourceName, paramsName, paramsArray) {
             resource = await resource.save();
             res.status(201).json(resource);
         } catch (error) {
-            res.status(400).json(this.json_error('Bad Request', error));
+            res.status(400).json(this.json_error('Bad Request', error.message));
         }
     }
     this.show = async(req, res) => {
@@ -79,7 +80,7 @@ function resourceController(Resource, resourceName, paramsName, paramsArray) {
         try {
             record = await this.Resource.findByIdAndDelete(req.params.id)
             res.json({
-                message: 'Record successfully deleted!'
+                message: this.resourceName + ' successfully deleted!'
             })
         } catch (error) {
             res.status(400).json(this.json_error('Bad Request', error))
