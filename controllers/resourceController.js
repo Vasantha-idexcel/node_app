@@ -5,6 +5,7 @@ function resourceController(Resource, resourceName, paramsName, paramsArray) {
     this.resourceName = resourceName
     this.paramsName = paramsName || ''
     this.paramsArray = paramsArray || []
+    this.parent = undefined
     this.json_error = (title, message) => {
         return {
             code: title,
@@ -16,6 +17,9 @@ function resourceController(Resource, resourceName, paramsName, paramsArray) {
     this.checkParams = (req, res, next) => {
         try {
             data = params(req.body).require(this.paramsName)
+            if (this.parent !== undefined) {
+                Object.assign(data[this.paramsName], this.parent)
+            }
             data = params(data[this.paramsName]).only(this.paramsArray)
             req.bodyContent = data
             next()
@@ -28,7 +32,9 @@ function resourceController(Resource, resourceName, paramsName, paramsArray) {
             if (req.params.id.length != 24) {
                 throw 'Invalid Object id has been passed!'
             }
-            record = await this.Resource.findById(req.params.id)
+            query = { _id: req.params.id }
+            this.parent !== undefined ? Object.assign(query, this.parent) : undefined
+            record = await this.Resource.findOne(query)
             if (!record) {
                 throw 'Unable to fetch ' + this.paramsName + ' with given id!'
             }
@@ -40,8 +46,9 @@ function resourceController(Resource, resourceName, paramsName, paramsArray) {
     }
     this.index = async(req, res) => {
         try {
+            req.query = params(req.query).only(this.paramsArray)
             query = (req.query === {}) ? {} : req.query;
-            data = await this.Resource.find({});
+            data = await this.Resource.find(query);
             map = []
             data.forEach((resource) => {
                 map.push(resource)

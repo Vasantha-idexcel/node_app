@@ -1,5 +1,4 @@
 const { mongoose, validator } = require('./mongoose')
-const divisionSchema = require('./division')
 
 const borrowerSchema = mongoose.Schema({
     client_name: {
@@ -27,10 +26,7 @@ const borrowerSchema = mongoose.Schema({
                 throw new Error('Invalid email provided')
             }
         }
-    },
-    divisions: [{
-        divisionSchema
-    }]
+    }
 })
 
 borrowerSchema.pre('save', async function(next) {

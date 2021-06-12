@@ -13,5 +13,8 @@ router.delete('/borrowers/:id', borrowers.getRecord, borrowers.destroy)
 router.all('/borrowers/:borrower_id/*', divisions.getBorrower)
 router.get('/borrowers/:borrower_id/divisions', divisions.index)
 router.post('/borrowers/:borrower_id/divisions', divisions.checkParams, divisions.create)
+router.get('/borrowers/:borrower_id/divisions/:id', divisions.getRecord, divisions.show)
+router.patch('/borrowers/:borrower_id/divisions/:id', [divisions.getRecord, divisions.checkParams], divisions.update)
+router.delete('/borrowers/:borrower_id/divisions/:id', divisions.getRecord, divisions.destroy)
 
 module.exports = router

@@ -7,12 +7,6 @@ const collateralAdvanceRateSchema = {
         trim: true,
         maxLength: 10
     },
-    collateral_name: {
-        type: String,
-        required: true,
-        trim: true,
-        maxLength: 10
-    },
     sublimit: {
         type: Number
     },
@@ -20,7 +14,12 @@ const collateralAdvanceRateSchema = {
         type: Number,
         min: 0,
         max: 100
+    },
+    division: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Division'
     }
 }
 
-module.exports = collateralAdvanceRateSchema
+const CollateralAdvanceRate = mongoose.model('CollateralAdvanceRate', collateralAdvanceRateSchema)
+module.exports = CollateralAdvanceRate
