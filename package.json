@@ -17,10 +17,15 @@
     },
     "homepage": "https://github.com/Vasantha-idexcel/node_app#readme",
     "dependencies": {
+        "bcryptjs": "^2.4.3",
         "dotenv": "^10.0.0",
         "express": "^4.17.1",
+        "jsonwebtoken": "^8.5.1",
+        "jwt-decode": "^3.1.2",
         "mongoose": "^5.12.13",
         "params": "^0.1.1",
+        "passport": "^0.4.1",
+        "passport-jwt": "^4.0.0",
         "validator": "^13.6.0"
     }
 }

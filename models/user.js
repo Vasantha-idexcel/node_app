@@ -1,14 +1,7 @@
 const { mongoose, validator } = require('./mongoose')
+const bcrypt = require('bcryptjs')
 
 const userSchema = mongoose.Schema({
-    username: {
-        type: String,
-        required: true,
-        trim: true,
-        unique: true,
-        minLength: 5,
-        maxLength: 7
-    },
     email: {
         type: String,
         required: true,
@@ -35,6 +28,9 @@ const userSchema = mongoose.Schema({
                 ])
             }
         }
+    },
+    token: {
+        type: String
     }
 })
 

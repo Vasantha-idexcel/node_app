@@ -1,4 +1,5 @@
 const params = require('params');
+const json_error = require('../config/utils')
 
 function resourceController(Resource, resourceName, paramsName, paramsArray) {
     this.Resource = Resource
@@ -6,14 +7,7 @@ function resourceController(Resource, resourceName, paramsName, paramsArray) {
     this.paramsName = paramsName || ''
     this.paramsArray = paramsArray || []
     this.parent = undefined
-    this.json_error = (title, message) => {
-        return {
-            code: title,
-            message: message,
-            timeStamp: Date(),
-            source: this.resourceName + ' source'
-        }
-    }
+    this.json_error = json_error
     this.checkParams = (req, res, next) => {
         try {
             data = params(req.body).require(this.paramsName)
