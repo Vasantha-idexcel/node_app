@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const resources = require('./resources')
 
+const users = require('../controllers/usersController')
 const borrowers = require('../controllers/borrowersController')
 const divisions = require('../controllers/divisionsController')
 const collaterals = require('../controllers/collateralAdvanceRatesController')

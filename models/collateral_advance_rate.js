@@ -7,6 +7,12 @@ const collateralAdvanceRateSchema = {
         trim: true,
         maxLength: 10
     },
+    source: {
+        type: String,
+        required: true,
+        trim: true,
+        enum: ['Receivable', 'Payable', 'Inventory', 'Other Collateral']
+    },
     sublimit: {
         type: Number
     },

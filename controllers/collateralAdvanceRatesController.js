@@ -6,7 +6,7 @@ const CollateralAdvanceRate = require('../models/collateral_advance_rate')
 const collateralAdvanceRatesController = new ResourceController(
     CollateralAdvanceRate,
     "CollateralAdvanceRate",
-    "collateral_advance_rate", ["collateral_name", "sublimit", "advance", "division"]
+    "collateral_advance_rate", ["collateral_name", "sublimit", "advance", "division", "source"]
 )
 
 collateralAdvanceRatesController.getBorrower = async(req, res, next) => {
