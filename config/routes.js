@@ -1,20 +1,15 @@
 const express = require('express')
 const router = express.Router()
+const resources = require('./resources')
 
 const borrowers = require('../controllers/borrowersController')
 const divisions = require('../controllers/divisionsController')
+const collaterals = require('../controllers/collateralAdvanceRatesController')
 
-router.get('/borrowers', borrowers.index)
-router.post('/borrowers', borrowers.checkParams, borrowers.create)
-router.get('/borrowers/:id', borrowers.getRecord, borrowers.show)
-router.patch('/borrowers/:id', [borrowers.getRecord, borrowers.checkParams], borrowers.update)
-router.delete('/borrowers/:id', borrowers.getRecord, borrowers.destroy)
-
+resources(router, borrowers, "borrowers")
 router.all('/borrowers/:borrower_id/*', divisions.getBorrower)
-router.get('/borrowers/:borrower_id/divisions', divisions.index)
-router.post('/borrowers/:borrower_id/divisions', divisions.checkParams, divisions.create)
-router.get('/borrowers/:borrower_id/divisions/:id', divisions.getRecord, divisions.show)
-router.patch('/borrowers/:borrower_id/divisions/:id', [divisions.getRecord, divisions.checkParams], divisions.update)
-router.delete('/borrowers/:borrower_id/divisions/:id', divisions.getRecord, divisions.destroy)
+resources(router, divisions, "divisions", "/borrowers/:borrower_id/")
+router.all('/borrowers/:borrower_id/divisions/:division_id/*', [collaterals.getBorrower, collaterals.getDivision])
+resources(router, collaterals, "collaterals", "/borrowers/:borrower_id/divisions/:division_id/")
 
 module.exports = router

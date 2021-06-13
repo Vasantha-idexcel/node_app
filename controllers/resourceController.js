@@ -24,7 +24,7 @@ function resourceController(Resource, resourceName, paramsName, paramsArray) {
             req.bodyContent = data
             next()
         } catch (error) {
-            res.status(400).json(this.json_error('Bad Request', "Missing params - " + this.paramsName))
+            res.status(400).json(this.json_error('Bad Request', `Missing params - ${this.paramsName}`))
         }
     }
     this.getRecord = async(req, res, next) => {
@@ -36,7 +36,7 @@ function resourceController(Resource, resourceName, paramsName, paramsArray) {
             this.parent !== undefined ? Object.assign(query, this.parent) : undefined
             record = await this.Resource.findOne(query)
             if (!record) {
-                throw 'Unable to fetch ' + this.paramsName + ' with given id!'
+                throw `Unable to fetch ${this.paramsName} with given id!`
             }
             req.resourceContent = record
             next()
@@ -87,7 +87,7 @@ function resourceController(Resource, resourceName, paramsName, paramsArray) {
         try {
             record = await this.Resource.findByIdAndDelete(req.params.id)
             res.json({
-                message: this.resourceName + ' successfully deleted!'
+                message: `${this.resourceName} successfully deleted!`
             })
         } catch (error) {
             res.status(400).json(this.json_error('Bad Request', error))
