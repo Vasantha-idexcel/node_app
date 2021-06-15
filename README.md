@@ -15,6 +15,9 @@ This app contains 4 models - User, Borrower, Division and Collaterals. User mode
 Api's Available:
 
 1. User Sign Up - POST - /api/v1/signup
+
+    Will send confirmation mail to the given email.
+
     ```json
     {
         "user": {
@@ -23,3 +26,9 @@ Api's Available:
         }
     }
     ```
+ 
+2. Confirm Account - GET - /api/v1/activate/:token
+
+3. Login - POST - /api/v1/login
+
+
