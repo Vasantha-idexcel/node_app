@@ -12,7 +12,7 @@ Step 4 - Run the application with the command
 
 NODE APP
 
-This app contains 4 models - User, Borrower, Division and Collaterals. User model is for user sign up and authentication. Borrower, Division and Collateral models are linked with each other using mongoose - refs association.
+This app contains 4 models - User, Borrower, Division and Collaterals. User model is used for user sign up and authentication. Borrower, Division and Collateral models are linked with each other using mongoose - refs association.
 
 1. mongoose npm module is used to connect and interact with the mongodb database.
 2. bcryptjs npm module is used to hash the user's password.
