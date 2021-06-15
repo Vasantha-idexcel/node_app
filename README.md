@@ -4,13 +4,21 @@ Step 1 - Clone the app and install all requied npm modules by using the command
     
 Step 2 - Add .env file inside node_app folder. Or rename 'env.example' file to '.env'
 
-Step 3 - Run the application with the command
+Step 3 - Make sure mongod server is running on Port - 27017
+
+Step 4 - Run the application with the command
 
     npm start
 
 NODE APP
 
 This app contains 4 models - User, Borrower, Division and Collaterals. User model is for user sign up and authentication. Borrower, Division and Collateral models are linked with each other using mongoose - refs association.
+
+mongoose npm module is used to connect and interact with the mongodb database.
+bcryptjs npm module is used to hash the user's password.
+validator npm module is used to validate Mongoose models.
+jsonwebtoken, passport and passport-jwt are the npm modules used for user authentication.
+nodemailer npm module is used for sending user confirmation email.
 
 Api's Available:
 
