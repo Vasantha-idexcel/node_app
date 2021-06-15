@@ -14,11 +14,11 @@ NODE APP
 
 This app contains 4 models - User, Borrower, Division and Collaterals. User model is for user sign up and authentication. Borrower, Division and Collateral models are linked with each other using mongoose - refs association.
 
-mongoose npm module is used to connect and interact with the mongodb database.
-bcryptjs npm module is used to hash the user's password.
-validator npm module is used to validate Mongoose models.
-jsonwebtoken, passport and passport-jwt are the npm modules used for user authentication.
-nodemailer npm module is used for sending user confirmation email.
+1. mongoose npm module is used to connect and interact with the mongodb database.
+2. bcryptjs npm module is used to hash the user's password.
+3. validator npm module is used to validate Mongoose models.
+4. jsonwebtoken, passport and passport-jwt are the npm modules used for user authentication.
+5. nodemailer npm module is used for sending user confirmation email.
 
 Api's Available:
 
