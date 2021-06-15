@@ -54,7 +54,7 @@ User APIs
     }
     ```
     
-    NOTE: Bearer token should be attached to the header. This tokwn is used to authenticate the user trying to access the apis.
+    NOTE: Bearer token should be attached to the header. This token is used to authenticate the user trying to access the apis.
 
 Borrower APIs
     
