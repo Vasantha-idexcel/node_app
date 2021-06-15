@@ -14,12 +14,11 @@ This app contains 4 models - User, Borrower, Division and Collaterals. User mode
 
 Api's Available:
 
-1. User Sign Up
-
-    POST            /api/v1/signup
-    Sample Body     {
-                        "user": {
-                            "email": "vasanthakumar296@gmail.com",
-                            "password": "Password@123"
-                        }
-                    }
+1. User Sign Up - POST - /api/v1/signup
+    
+    {
+        "user": {
+            "email": "sample@gmail.com",
+            "password": "Password"
+        }
+    }
