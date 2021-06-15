@@ -14,6 +14,8 @@ This app contains 4 models - User, Borrower, Division and Collaterals. User mode
 
 Api's Available:
 
+User APIs
+
 1. User Sign Up - POST - /api/v1/signup
 
     Will send confirmation mail to the given email.
@@ -44,13 +46,15 @@ Api's Available:
     }
     ```
     
-NOTE: Bearer <token> should be attached to the header. This tokwn is used to authenticate the user trying to access the apis.
+    NOTE: Bearer <token> should be attached to the header. This tokwn is used to authenticate the user trying to access the apis.
+
+Borrower APIs
     
-4. List Borrowers - GET - /api/v1/borrowers
+1. List Borrowers - GET - /api/v1/borrowers
     
     Will list all the borrowers created.
 
-5. Create Borrower - POST - /api/v1/borrowers
+2. Create Borrower - POST - /api/v1/borrowers
     
     Is used to create a new Borrower.
     
@@ -63,3 +67,109 @@ NOTE: Bearer <token> should be attached to the header. This tokwn is used to aut
         }
     }
     ```
+
+3. Fetch Borrower - GET - /api/v1/borrowers/:id
+
+    Is used to fetch a specific Borrower.
+
+4. Update Borrower - PATCH - /api/v1/borrowers/:id
+
+    Is used to update a specific Borrower.
+
+    ```json
+    {
+        "borrower": {
+            "client_name": "test_client_1",
+            "client_number": "test_client_1",
+            "email": "test_client_1@idx.com"
+        }
+    }
+    ```
+
+5. Delete Borrower - DELETE - /api/v1/borrowers/:id
+
+    Is used to delete the specific Borrower.
+
+Division APIs
+
+1. List Divisions - GET - /api/v1/borrowers/:borrower_id/divisions
+    
+    Will list all the divisions created.
+
+2. Create Division - POST - /api/v1/borrowers/:borrower_id/divisions
+    
+    Is used to create a new Division.
+    
+    ```json
+    {
+        "division": {
+            "division_name": "Div1",
+            "description": "Division 1"
+        }
+    }
+    ```
+
+3. Fetch Division - GET - /api/v1/borrowers/:borrower_id/divisions/:id
+
+    Is used to fetch a specific Division.
+
+4. Update Division - PATCH - /api/v1/borrowers/:borrower_id/divisions/:id
+
+    Is used to update a specific Division.
+
+    ```json
+    {
+        "division": {
+            "division_name": "Div1",
+            "description": "Division 1"
+        }
+    }
+    ```
+
+5. Delete Division - DELETE - /api/v1/borrowers/:borrower_id/divisions/:id
+
+    Is used to delete the specific Division.
+
+Collateral APIs
+
+1. List Collaterals - GET - /api/v1/borrowers/:borrower_id/divisions/:division_id/collaterals
+    
+    Will list all the collaterals created.
+
+2. Create Collateral - POST - /api/v1/borrowers/:borrower_id/divisions/:division_id/collaterals
+    
+    Is used to create a new Collateral.
+    
+    ```json
+    {
+        "collateral_advance_rate":{
+            "collateral_name": "Chennai",
+            "sublimit": 10000,
+            "advance": 95,
+            "source": "Receivable"
+        }
+    }
+    ```
+
+3. Fetch Collateral - GET - /api/v1/borrowers/:borrower_id/divisions/:division_id/collaterals/:id
+
+    Is used to fetch a specific Collateral.
+
+4. Update Collateral - PATCH - /api/v1/borrowers/:borrower_id/divisions/:division_id/collaterals/:id
+
+    Is used to update a specific Collateral.
+
+    ```json
+    {
+        "collateral_advance_rate":{
+            "collateral_name": "Chennai",
+            "sublimit": 10000,
+            "advance": 95,
+            "source": "Receivable"
+        }
+    }
+    ```
+
+5. Delete Collateral - DELETE - /api/v1/borrowers/:borrower_id/divisions/:division_id/collaterals/:id
+
+    Is used to delete the specific Collateral.
