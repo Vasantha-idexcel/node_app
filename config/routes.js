@@ -10,8 +10,9 @@ const divisions = require('../controllers/divisionsController')
 const collaterals = require('../controllers/collateralAdvanceRatesController')
 const json_error = require('./utils')
 
-router.post('/signup', users.checkParams, users.create)
+router.post('/signup', users.checkParams, users.signup)
 router.post('/login', sessions.checkParams, sessions.create)
+router.get('/activate/:token', users.create)
 
 router.all('*', (req, res, next) => {
     passport.authenticate('jwt', { session: false }, (err, user) => {

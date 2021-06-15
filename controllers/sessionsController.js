@@ -19,7 +19,7 @@ const sessionsController = {
         try {
             user = await User.findOne({ email: req.bodyContent.email })
             if (!user) {
-                throw new Error()
+                throw "Invalid Login Credentials"
             }
             isMatch = await bcrypt.compare(req.bodyContent.password, user.password)
             if (isMatch) {
@@ -28,10 +28,10 @@ const sessionsController = {
                 await user.save()
                 res.json({ token })
             } else {
-                throw new Error()
+                throw "Invalid Login Credentials"
             }
         } catch (error) {
-            res.status(401).json(json_error('Authentication Failed', "Invalid Login Credentials"))
+            res.status(401).json(json_error('Authentication Failed', error))
         }
     }
 }
