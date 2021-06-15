@@ -29,6 +29,37 @@ Api's Available:
  
 2. Confirm Account - GET - /api/v1/activate/:token
 
+    Will activate the account linked to the email.
+
 3. Login - POST - /api/v1/login
 
+    Will generate a Bearer token that can be used to authenticate all other apis.
+    
+    ```json
+    {
+        "user": {
+            "email": "sample@gmail.com",
+            "password": "Password"
+        }
+    }
+    ```
+    
+NOTE: Bearer <token> should be attached to the header. This tokwn is used to authenticate the user trying to access the apis.
+    
+4. List Borrowers - GET - /api/v1/borrowers
+    
+    Will list all the borrowers created.
 
+5. Create Borrower - POST - /api/v1/borrowers
+    
+    Is used to create a new Borrower.
+    
+    ```json
+    {
+        "borrower": {
+            "client_name": "test_client_1",
+            "client_number": "test_client_1",
+            "email": "test_client_1@idx.com"
+        }
+    }
+    ```
