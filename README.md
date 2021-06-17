@@ -1,3 +1,5 @@
+# Setup
+
 Step 1 - Clone the app and install all requied npm modules by using the command
     
     npm install
@@ -10,7 +12,7 @@ Step 4 - Run the application with the command
 
     npm start
 
-NODE APP
+# NODE APP
 
 This app contains 4 models - User, Borrower, Division and Collaterals. User model is used for user sign up and authentication. Borrower, Division and Collateral models are linked with each other using mongoose - refs association.
 
@@ -20,11 +22,13 @@ This app contains 4 models - User, Borrower, Division and Collaterals. User mode
 4. jsonwebtoken, passport and passport-jwt are the npm modules used for user authentication.
 5. nodemailer npm module is used for sending user confirmation email.
 
-Api's Available:
+## Api's Available:
 
-User APIs
+### User APIs
 
-    Postman Collection - https://www.getpostman.com/collections/911894849e3e067b0c83
+Postman Collection is provided below 
+
+    https://www.getpostman.com/collections/911894849e3e067b0c83
 
 1. User Sign Up - POST - /api/v1/signup
 
@@ -58,9 +62,11 @@ User APIs
     
     NOTE: Bearer token should be attached to the header. This token is used to authenticate the user trying to access the apis.
 
-Borrower APIs
+### Borrower APIs
 
-    Postman Collection - https://www.getpostman.com/collections/61693aaea4fa446c508e
+Postman Collection is provided below 
+
+    https://www.getpostman.com/collections/61693aaea4fa446c508e
     
 1. List Borrowers - GET - /api/v1/borrowers
     
@@ -102,7 +108,11 @@ Borrower APIs
 
     Is used to delete the specific Borrower.
 
-Division APIs
+### Division APIs
+
+Postman Collection is provided below 
+
+    https://www.getpostman.com/collections/c25172e1077237731500
 
 1. List Divisions - GET - /api/v1/borrowers/:borrower_id/divisions
     
@@ -142,7 +152,11 @@ Division APIs
 
     Is used to delete the specific Division.
 
-Collateral APIs
+### Collateral APIs
+
+Postman Collection is provided below 
+
+    https://www.getpostman.com/collections/03e543f1da3b0f0c06ed
 
 1. List Collaterals - GET - /api/v1/borrowers/:borrower_id/divisions/:division_id/collaterals
     
