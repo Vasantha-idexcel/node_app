@@ -26,11 +26,9 @@ This app contains 4 models - User, Borrower, Division and Collaterals. User mode
 
 ### User APIs
 
-Postman Collection is provided below 
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/911894849e3e067b0c83#?env%5BApi%5D=W3sia2V5IjoiVE9LRU4iLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWV9XQ==)
 
-    https://www.getpostman.com/collections/911894849e3e067b0c83
-
-1. User Sign Up - POST - /api/v1/signup
+1. **Sign Up** - POST - /api/v1/signup
 
     Will send confirmation mail to the given email.
 
@@ -43,11 +41,11 @@ Postman Collection is provided below
     }
     ```
  
-2. Confirm Account - GET - /api/v1/activate/:token
+2. **Confirm Account** - GET - /api/v1/activate/:token
 
     Will activate the account linked to the email.
 
-3. Login - POST - /api/v1/login
+3. **Login** - POST - /api/v1/login
 
     Will generate a Bearer token that can be used to authenticate all other apis.
     
@@ -64,15 +62,13 @@ Postman Collection is provided below
 
 ### Borrower APIs
 
-Postman Collection is provided below 
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/61693aaea4fa446c508e#?env%5BApi%5D=W3sia2V5IjoiVE9LRU4iLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWV9XQ==)
 
-    https://www.getpostman.com/collections/61693aaea4fa446c508e
-    
-1. List Borrowers - GET - /api/v1/borrowers
+1. **List Borrowers** - GET - /api/v1/borrowers
     
     Will list all the borrowers created.
 
-2. Create Borrower - POST - /api/v1/borrowers
+2. **Create Borrower** - POST - /api/v1/borrowers
     
     Is used to create a new Borrower.
     
@@ -86,11 +82,11 @@ Postman Collection is provided below
     }
     ```
 
-3. Fetch Borrower - GET - /api/v1/borrowers/:id
+3. **Fetch Borrower** - GET - /api/v1/borrowers/:id
 
     Is used to fetch a specific Borrower.
 
-4. Update Borrower - PATCH - /api/v1/borrowers/:id
+4. **Update Borrower** - PATCH - /api/v1/borrowers/:id
 
     Is used to update a specific Borrower.
 
@@ -104,21 +100,19 @@ Postman Collection is provided below
     }
     ```
 
-5. Delete Borrower - DELETE - /api/v1/borrowers/:id
+5. **Delete Borrower** - DELETE - /api/v1/borrowers/:id
 
     Is used to delete the specific Borrower.
 
 ### Division APIs
 
-Postman Collection is provided below 
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/c25172e1077237731500#?env%5BApi%5D=W3sia2V5IjoiVE9LRU4iLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWV9XQ==)
 
-    https://www.getpostman.com/collections/c25172e1077237731500
-
-1. List Divisions - GET - /api/v1/borrowers/:borrower_id/divisions
+1. **List Divisions** - GET - /api/v1/borrowers/:borrower_id/divisions
     
     Will list all the divisions created.
 
-2. Create Division - POST - /api/v1/borrowers/:borrower_id/divisions
+2. **Create Division** - POST - /api/v1/borrowers/:borrower_id/divisions
     
     Is used to create a new Division.
     
@@ -131,11 +125,11 @@ Postman Collection is provided below
     }
     ```
 
-3. Fetch Division - GET - /api/v1/borrowers/:borrower_id/divisions/:id
+3. **Fetch Division** - GET - /api/v1/borrowers/:borrower_id/divisions/:id
 
     Is used to fetch a specific Division.
 
-4. Update Division - PATCH - /api/v1/borrowers/:borrower_id/divisions/:id
+4. **Update Division** - PATCH - /api/v1/borrowers/:borrower_id/divisions/:id
 
     Is used to update a specific Division.
 
@@ -148,21 +142,19 @@ Postman Collection is provided below
     }
     ```
 
-5. Delete Division - DELETE - /api/v1/borrowers/:borrower_id/divisions/:id
+5. **Delete Division** - DELETE - /api/v1/borrowers/:borrower_id/divisions/:id
 
     Is used to delete the specific Division.
 
 ### Collateral APIs
 
-Postman Collection is provided below 
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/03e543f1da3b0f0c06ed#?env%5BApi%5D=W3sia2V5IjoiVE9LRU4iLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWV9XQ==)
 
-    https://www.getpostman.com/collections/03e543f1da3b0f0c06ed
-
-1. List Collaterals - GET - /api/v1/borrowers/:borrower_id/divisions/:division_id/collaterals
+1. **List Collaterals** - GET - /api/v1/borrowers/:borrower_id/divisions/:division_id/collaterals
     
     Will list all the collaterals created.
 
-2. Create Collateral - POST - /api/v1/borrowers/:borrower_id/divisions/:division_id/collaterals
+2. **Create Collateral** - POST - /api/v1/borrowers/:borrower_id/divisions/:division_id/collaterals
     
     Is used to create a new Collateral.
     
@@ -177,11 +169,11 @@ Postman Collection is provided below
     }
     ```
 
-3. Fetch Collateral - GET - /api/v1/borrowers/:borrower_id/divisions/:division_id/collaterals/:id
+3. **Fetch Collateral** - GET - /api/v1/borrowers/:borrower_id/divisions/:division_id/collaterals/:id
 
     Is used to fetch a specific Collateral.
 
-4. Update Collateral - PATCH - /api/v1/borrowers/:borrower_id/divisions/:division_id/collaterals/:id
+4. **Update Collateral** - PATCH - /api/v1/borrowers/:borrower_id/divisions/:division_id/collaterals/:id
 
     Is used to update a specific Collateral.
 
@@ -196,6 +188,6 @@ Postman Collection is provided below
     }
     ```
 
-5. Delete Collateral - DELETE - /api/v1/borrowers/:borrower_id/divisions/:division_id/collaterals/:id
+5. **Delete Collateral** - DELETE - /api/v1/borrowers/:borrower_id/divisions/:division_id/collaterals/:id
 
     Is used to delete the specific Collateral.
