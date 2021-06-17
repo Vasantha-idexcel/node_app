@@ -4,11 +4,9 @@ Step 1 - Clone the app and install all requied npm modules by using the command
     
     npm install
     
-Step 2 - Add .env file inside node_app folder. Or rename 'env.example' file to '.env'
+Step 2 - Make sure mongod server is running on Port - 27017
 
-Step 3 - Make sure mongod server is running on Port - 27017
-
-Step 4 - Run the application with the command
+Step 3 - Run the application with the command
 
     npm start
 
