@@ -24,6 +24,8 @@ Api's Available:
 
 User APIs
 
+    Postman Collection - https://www.getpostman.com/collections/911894849e3e067b0c83
+
 1. User Sign Up - POST - /api/v1/signup
 
     Will send confirmation mail to the given email.
@@ -57,6 +59,8 @@ User APIs
     NOTE: Bearer token should be attached to the header. This token is used to authenticate the user trying to access the apis.
 
 Borrower APIs
+
+    Postman Collection - https://www.getpostman.com/collections/61693aaea4fa446c508e
     
 1. List Borrowers - GET - /api/v1/borrowers
     
